@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,23 +24,32 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try{
+                    String rmb = editRmb.getText().toString();
+                    String price = editPrice.getText().toString();
+                    String bottle = editBottle.getText().toString();
+                    String lid = editLid.getText().toString();
 
-                String rmb = editRmb.getText().toString();
-                String price = editPrice.getText().toString();
-                String bottle = editBottle.getText().toString();
-                String lid = editLid.getText().toString();
+                    int r = Integer.parseInt(rmb);
+                    int p = Integer.parseInt(price);
+                    int b = Integer.parseInt(bottle);
+                    int l = Integer.parseInt(lid);
 
-                int r = Integer.parseInt(rmb);
-                int p = Integer.parseInt(price);
-                int b = Integer.parseInt(bottle);
-                int l = Integer.parseInt(lid);
+                    if(r==0 || p==0 || b==0 || l==0){
+                        Toast.makeText(MainActivity.this, "不要设置0", Toast.LENGTH_LONG).show();
+                        return;
+                    }
 
-                Saler saler = new Saler(b, l, p);
+                    Saler saler = new Saler(b, l, p);
 
-                Person persion = new Person(r);
+                    Person persion = new Person(r);
 
-                persion.buy(saler);
-                persion.play(saler, textLog);
+                    persion.buy(saler);
+                    persion.play(saler, textLog);
+
+                }catch (Exception e){
+                    Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
