@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="edit">
+        <item name="android:digits">0123456789</item>
+        <item name="android:inputType">number</item>
+    </style>
+
 </resources>

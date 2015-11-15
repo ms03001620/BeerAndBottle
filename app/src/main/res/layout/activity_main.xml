@@ -23,10 +23,9 @@
 
         <EditText
             android:id="@+id/edit_rmb"
+            style="@style/edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:digits="0123456789"
-            android:inputType="number"
             android:text="10" />
 
     </LinearLayout>
@@ -43,6 +42,7 @@
 
         <EditText
             android:id="@+id/edit_price"
+            style="@style/edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2" />
@@ -56,6 +56,7 @@
 
         <EditText
             android:id="@+id/edit_bottle"
+            style="@style/edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2" />
@@ -68,6 +69,7 @@
 
         <EditText
             android:id="@+id/edit_lid"
+            style="@style/edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="4" />
