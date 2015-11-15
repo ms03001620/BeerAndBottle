@@ -102,7 +102,7 @@ public class Person {
 
             s.exchange(this);
 
-            sb.append(i + ", 换 ");
+            sb.append(i++ + ", 换 ");
             sb.append(toString());
             sb.append("\n");
 
