@@ -89,11 +89,12 @@ public class Person {
 
     public void play(Saler s, TextView text) {
         StringBuffer sb = new StringBuffer();
+        int i = 1;
         while (beer > 0) {
             text.setText("");
             drinking();
 
-            sb.append("喝 ");
+            sb.append(i++ + ", 喝 ");
             sb.append(toString());
             sb.append("\n");
 
@@ -101,7 +102,7 @@ public class Person {
 
             s.exchange(this);
 
-            sb.append("换 ");
+            sb.append(i + ", 换 ");
             sb.append(toString());
             sb.append("\n");
 
@@ -112,7 +113,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "{" +
                 "drink=" + drink +
                 ", bottle=" + bottle +
                 ", lid=" + lid +
